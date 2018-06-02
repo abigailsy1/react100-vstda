@@ -75,7 +75,7 @@ class App extends Component {
                     <li className="list-group-item list-group-item-info">
                       <h3><strong>Welcome to Very Simple Todo App</strong></h3>
                       <br />
-                      <a className="font-weight-normal">Get started now by adding a new todo on the left!</a>
+                      <span className="font-weight-normal">Get started now by adding a new todo on the left!</span>
                     </li>
                   )}
               </ul>
