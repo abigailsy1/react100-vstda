@@ -1,0 +1,1 @@
+This VSTDA allows users to create tasks, edit tasks, and delete tasks. Additionally, users can prioritize these tasks by importance. 
