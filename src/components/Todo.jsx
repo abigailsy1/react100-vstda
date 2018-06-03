@@ -13,8 +13,8 @@ export default class Todo extends React.Component {
         this.editingChange = this.editingChange.bind(this);
         this.saving = this.saving.bind(this);
     }
-    handleChange(event) {
-        this.setState({ [event.target.name]: event.target.value })
+    handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value })
     }
     removing() {
         this.props.deleteUpdateTodo(this.props.index);
@@ -78,22 +78,16 @@ export default class Todo extends React.Component {
             priority = "list-group-item list-group-item-success";
         } else if (this.props.details.priority == 2) {
             priority = "list-group-item list-group-item-warning";
+        } else if (this.props.details.priority === 3) {
+            priority = "list-group-item list-group-item-warning";
         } else {
-            priority = "list-group-item list-group-item-danger";
-        }
+            priority = "list-group-item list-group-item-dark";
+        } 
         return (
             <li className={priority}>
                 {this.state.isEditing ? this.renderEditing() : this.renderNormal()}
             </li>
         );
-        // let priority;
-        // if (this.props.details.priority == 1) {
-        //     priority = "alert-success";
-        // } else if (this.props.details.priority == 2) {
-        //     priority = "alert-info";
-        // } else {
-        //     priority = "alert-danger";
-        // } if (this.props.details.editingChange === true)
     }
 }
 

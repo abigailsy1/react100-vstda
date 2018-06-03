@@ -14,17 +14,17 @@ class App extends Component {
     this.editTodo = this.editTodo.bind(this);
     this.submit = this.submit.bind(this);
   }
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value })
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
   }
-  deleteTodo(index) {
+  deleteTodo(i) {
     let arr = this.state.todos.slice();
-    arr.splice(index, 1)
+    arr.splice(i, 1)
     this.setState({ todos: arr })
   }
-  editTodo(newText, index) {
+  editTodo(newText, i) {
     let arr = this.state.todos.slice();
-    arr[index] = newText
+    arr[i] = newText
     this.setState({ todos: arr })
   }
   submit() {
@@ -36,9 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="text-white">Very Simple Todo App</h1>
-        <p className="text-white">Track all of the things.</p>
-        <hr className="bg-white" />
+        <h1 className="text-black">Very Simple Todo App</h1>
+        <p className="text-black">Track all of the things.</p>
+        <hr className="bg-red" />
 
         <div className="row">
           <div className="col-md-4">
@@ -69,10 +69,10 @@ class App extends Component {
               <div className="card-header font-weight-bold">View Todos:</div>
               <ul className="list-group">
                 {this.state.todos.length ? (
-                  this.state.todos.map((details, index) =>
-                    <Todo key={details.text + index} details={details} editUpdateTodo={this.editTodo} deleteUpdateTodo={this.deleteTodo} index={index} />)
+                  this.state.todos.map((details, i) =>
+                    <Todo key={details.text + i} details={details} editUpdateTodo={this.editTodo} deleteUpdateTodo={this.deleteTodo} index={i} />)
                 ) : (
-                    <li className="list-group-item list-group-item-info">
+                    <li className="list-group-item list-group-item-danger">
                       <h3><strong>Welcome to Very Simple Todo App</strong></h3>
                       <br />
                       <span className="font-weight-normal">Get started now by adding a new todo on the left!</span>
